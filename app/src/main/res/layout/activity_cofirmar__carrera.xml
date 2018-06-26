@@ -11,23 +11,14 @@
         android:id="@+id/btn_aceptar_Carrera"
         android:layout_width="115dp"
         android:layout_height="115dp"
-        android:layout_marginBottom="8dp"
-<<<<<<< HEAD
-        android:layout_marginEnd="8dp"
-=======
->>>>>>> f545d76e1aa5c7b4bc193559a1e2f3a12b0c9f50
+        android:layout_marginBottom="10dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/round_foreground"
-        android:text="confirmar carrera"
+        android:background="@mipmap/round_round"
         app:layout_constraintBottom_toBottomOf="parent"
-<<<<<<< HEAD
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.219"
-=======
->>>>>>> f545d76e1aa5c7b4bc193559a1e2f3a12b0c9f50
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editLlegada" />
+    />
 
     <Button
         android:id="@+id/btn_rechazar_Carrera"
