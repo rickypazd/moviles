@@ -38,6 +38,7 @@ public class Cofirmar_Carrera extends AppCompatActivity {
         if(id_carrera<=0){
             finish();
         }
+
         final JSONObject usr_log = getUsr_log();
         if (usr_log == null) {
             Intent intent = new Intent(Cofirmar_Carrera.this, Login.class);
