@@ -12,14 +12,14 @@
         android:layout_width="115dp"
         android:layout_height="115dp"
         android:layout_marginBottom="10dp"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="52dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/round_foreground"
         android:text="confirmar carrera"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editLlegada"
-        app:layout_constraintVertical_bias="0.377" />
+        app:layout_constraintVertical_bias="0.545" />
     />
 
     <Button
@@ -27,7 +27,7 @@
         android:layout_width="115dp"
         android:layout_height="115dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="60dp"
+        android:layout_marginEnd="52dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/ic_btn_rechazar"
         android:text="Rechazar carrera"
@@ -35,46 +35,48 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editLlegada"
-        app:layout_constraintVertical_bias="0.363" />
+        app:layout_constraintVertical_bias="0.529" />
 
     <EditText
         android:id="@+id/editInicio"
-        android:layout_width="260dp"
+        android:layout_width="0dp"
         android:layout_height="51dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="36dp"
         android:background="@drawable/botonred"
         android:drawableLeft="@drawable/ic_marca_de_localizacion"
         android:inputType="textPersonName"
         android:paddingLeft="10dp"
         android:textColor="#fff"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editName" />
 
     <EditText
         android:id="@+id/editLlegada"
-        android:layout_width="260dp"
+        android:layout_width="0dp"
         android:layout_height="51dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="36dp"
         android:background="@drawable/botonred"
         android:drawableLeft="@drawable/ic_marca_de_localizacion"
         android:inputType="textPersonName"
         android:paddingLeft="10dp"
         android:textColor="#fff"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editInicio" />
 
     <EditText
         android:id="@+id/editName"
-        android:layout_width="260dp"
-        android:layout_height="51dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="36dp"
         android:background="@drawable/botonred"
         android:inputType="textPersonName"
