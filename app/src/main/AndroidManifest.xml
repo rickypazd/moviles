@@ -100,8 +100,9 @@
         <activity android:name=".Cobranza"></activity>
 =======
         <activity android:name=".finalizar_viajeCliente" android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".cobranza" android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
 >>>>>>> fea0b483703c260ee4ff15d33a97f2729b5d7b40
+        <activity android:name=".Cobranza" android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+
     </application>
 
 </manifest>
