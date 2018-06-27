@@ -95,8 +95,8 @@
             android:name=".MapCarrera"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".EsperandoConductor" />
-        <activity android:name=".finalizar_viajeCliente" />
-        <activity android:name=".cobranza"></activity>
+        <activity android:name=".finalizar_viajeCliente" android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".cobranza" android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
     </application>
 
 </manifest>
