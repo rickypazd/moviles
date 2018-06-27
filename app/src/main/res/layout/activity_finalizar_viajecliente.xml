@@ -30,7 +30,11 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
+<<<<<<< HEAD
+        android:text="¡Cuentanos tu experiencia!"
+=======
         android:text="¡Cuéntanos tu experiencia!"
+>>>>>>> dbe09cad9545336e93b60549a89215eaf3e3a9a5
         android:textColor="#fff"
         android:textSize="20dp"
         android:textStyle="bold"
