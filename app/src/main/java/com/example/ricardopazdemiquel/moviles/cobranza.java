@@ -8,8 +8,13 @@ import android.widget.TextView;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+<<<<<<< HEAD
 public class cobranza extends AppCompatActivity {
     private TextView tv_total;
+=======
+
+
+>>>>>>> c9d968d0ba4d3df071a4737bd53cfe3c9d765c7f
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
