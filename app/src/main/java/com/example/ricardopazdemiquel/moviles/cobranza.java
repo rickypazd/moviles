@@ -22,12 +22,12 @@ import clienteHTTP.StandarRequestConfiguration;
 import utiles.Contexto;
 
 
-public class cobranza extends AppCompatActivity implements View.OnClickListener{
+public class cobranza extends AppCompatActivity{
 
     private TextView tv_total;
     private Button btn_cobranza;
     String carrera;
-
+    private JSONObject obj_carrera;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,15 +36,26 @@ public class cobranza extends AppCompatActivity implements View.OnClickListener{
         tv_total = findViewById(R.id.tv_total);
         btn_cobranza = findViewById(R.id.btn_cobrar);
 
-        btn_cobranza.setOnClickListener(this);
+
 
         SharedPreferences preferencias = getSharedPreferences("myPref",MODE_PRIVATE);
         carrera = preferencias.getString("carrera", "");
 
         if(carrera.length()>0){
             try {
-                JSONObject obj = new JSONObject(carrera);
-                tv_total.setText(obj.getInt("costo_final")+" Bs.");
+                obj_carrera = new JSONObject(carrera);
+                tv_total.setText(obj_carrera.getInt("costo_final")+" Bs.");
+                btn_cobranza.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        try {
+                            new Cobrar_Carrera(obj_carrera.getInt("id")).execute();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                });
             } catch (JSONException e) {
                 e.printStackTrace();
 
@@ -52,13 +63,6 @@ public class cobranza extends AppCompatActivity implements View.OnClickListener{
         }else{
         }
     }
-    @Override
-    public void onClick(View view) {
-        if(view == btn_cobranza){
-            new Cobrar_Carrera(Integer.valueOf(carrera));
-        }
-    }
-
 
     //asyncTask Cobrar carrera
     private class Cobrar_Carrera extends AsyncTask<Void, String, String> {
