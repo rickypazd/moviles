@@ -212,10 +212,6 @@ public class fr_map extends Fragment implements View.OnClickListener{
         if(view == Pide_tu_siete){
             Intent intent = new Intent(getActivity(),Elejir_tipo_siete.class);
             if(longitudeGPS!=0){
-                        intent.putExtra("lng",longitudeGPS);
-                        intent.putExtra("lat",latitudeGPS);
-                        intent.putExtra("tipo",1);
-
         }
         startActivity(intent);
         getActivity().overridePendingTransition(R.anim.zoom_back_in,R.anim.fade_out);
