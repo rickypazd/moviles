@@ -212,15 +212,6 @@ public class fr_map extends Fragment implements View.OnClickListener{
         if(view == Pide_tu_siete){
             Intent intent = new Intent(getActivity(),Elejir_tipo_siete.class);
             if(longitudeGPS!=0){
-                intent.putExtra("lng",longitudeGPS);
-                intent.putExtra("lat",latitudeGPS);
-            }
-            startActivity(intent);
-            getActivity().overridePendingTransition(R.anim.zoom_back_in,R.anim.fade_out);
-        }
-
-<<<<<<< HEAD
-        if(longitudeGPS!=0){
                         intent.putExtra("lng",longitudeGPS);
                         intent.putExtra("lat",latitudeGPS);
                         intent.putExtra("tipo",1);
@@ -228,7 +219,6 @@ public class fr_map extends Fragment implements View.OnClickListener{
         }
         startActivity(intent);
         getActivity().overridePendingTransition(R.anim.zoom_back_in,R.anim.fade_out);
-=======
->>>>>>> 1319a5675eef0b1279d52e9fef36481e84da051b
+      }
     }
 }
