@@ -98,7 +98,7 @@
         <activity
             android:name=".cobranza"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".Elejir_tipo_siete"></activity>
+        <activity android:name=".Elejir_tipo_siete" android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
     </application>
 
 </manifest>
