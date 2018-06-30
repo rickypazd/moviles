@@ -529,10 +529,6 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
         }
     }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> e585ef1c6f31966c7954bab357f8dadf76e184cb
 
     public void calculando_ruta(View view){
         selected=null;
