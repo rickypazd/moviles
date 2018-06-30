@@ -92,10 +92,13 @@
             android:name=".MapCarrera"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".EsperandoConductor" />
-
-        <activity android:name=".finalizar_viajeCliente" android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".cobranza" android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
-
+        <activity
+            android:name=".finalizar_viajeCliente"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".cobranza"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".Elejir_tipo_siete"></activity>
     </application>
 
 </manifest>
