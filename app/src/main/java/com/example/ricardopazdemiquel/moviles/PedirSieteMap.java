@@ -93,6 +93,7 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
     private Button btn_confirmar;
     private ImageView iv_marker;
     private LinearLayout ll_ubic;
+    private LinearLayout linear_confirm;
     private ConstraintLayout ll_boton;
     private LatLng inicio;
     private LatLng fin;
@@ -120,7 +121,7 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
         final double longitudeGPS=getIntent().getDoubleExtra("lng",0);
         final double latitudeGPS=getIntent().getDoubleExtra("lat",0);
         tipo_carrera = getIntent().getIntExtra("tipo",0);
-        mostar_button(tipo_carrera);
+
 
         mGoogleApiClient = new GoogleApiClient.Builder(PedirSieteMap.this)
                 .addApi(Places.GEO_DATA_API)
@@ -139,6 +140,7 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
         btn_pedir_maravilla.setOnClickListener(this);
         btn_pedir_togo.setOnClickListener(this);
 
+        linear_confirm=findViewById(R.id.linear_confirm);
 
         mAutocompleteTextView = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView);
         mAutocompleteTextView.setOnFocusChangeListener(this);
@@ -162,7 +164,7 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
             startActivity(intent);
             finish();
         }
-
+        mostar_button(tipo_carrera);
         btn_confirmar= findViewById(R.id.btn_confirmar);
         btn_confirmar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -526,7 +528,10 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
         }
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> e585ef1c6f31966c7954bab357f8dadf76e184cb
 
     public void calculando_ruta(View view){
         selected=null;
@@ -544,7 +549,6 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
             iv_marker.setVisibility(View.INVISIBLE);
 
             view.setVisibility(View.GONE);
-
             googleMap.addMarker(new MarkerOptions().position(latlng1).title("INICIO").icon(BitmapDescriptorFactory.fromResource(R.drawable.asetmar)));
             googleMap.addMarker(new MarkerOptions().position(latlng2).title("FIN").icon(BitmapDescriptorFactory.fromResource(R.drawable.asetmar)));
             LatLngBounds.Builder builder = new LatLngBounds.Builder();
@@ -553,6 +557,8 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
             LatLngBounds bounds=builder.build();
             CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds,100);
             googleMap.moveCamera(cu);
+            linear_confirm.setVisibility(View.VISIBLE);
+            //aspdjapsd
         }
     }
 
