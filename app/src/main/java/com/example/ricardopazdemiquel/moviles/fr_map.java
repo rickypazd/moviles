@@ -214,7 +214,6 @@ public class fr_map extends Fragment implements View.OnClickListener{
             if(longitudeGPS!=0){
                         intent.putExtra("lng",longitudeGPS);
                         intent.putExtra("lat",latitudeGPS);
-                        intent.putExtra("tipo",1);
 
         }
         startActivity(intent);
