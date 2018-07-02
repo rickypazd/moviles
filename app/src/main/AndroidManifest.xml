@@ -99,7 +99,14 @@
         <activity
             android:name=".cobranza"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".Elejir_tipo_siete" android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
-    </application>
+        <activity
+            android:name=".Elejir_tipo_siete"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".Calificar_viaje" />
 
+        <activity
+            android:name=".Sin_conexion"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+
+    </application>
 </manifest>

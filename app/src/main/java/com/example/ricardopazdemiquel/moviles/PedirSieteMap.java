@@ -101,10 +101,13 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
     private PlaceArrayAdapter mPlaceArrayAdapter;
     private static final LatLngBounds BOUNDS_MOUNTAIN_VIEW = new LatLngBounds(
             new LatLng(37.398160, -122.180831), new LatLng(37.430610, -121.9720));
-
     JSONObject usr_log;
+
+    //inicializamos los botones para pedir siete y el tipo de carrera
     private Button btn_pedir_super , btn_pedir_maravilla ,btn_pedir_togo  , btn_pedir_estandar;
     private int tipo_carrera;
+    // inicializamos los iconos de confirmar carrera
+    private TextView icono1, icono2 ,icono3 , icono4 ,icono5, icono6,icono7;
 
     public PedirSieteMap() {
     }
@@ -133,6 +136,14 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
         btn_pedir_maravilla = findViewById(R.id.btn_pedir_maravilla);
         btn_pedir_togo = findViewById(R.id.btn_pedir_togo);
         btn_pedir_estandar = findViewById(R.id.btn_pedir_estandar);
+
+        icono1 = findViewById(R.id.icono1);
+        icono2 = findViewById(R.id.icono2);
+        icono3 = findViewById(R.id.icono3);
+        icono4 = findViewById(R.id.icono4);
+        icono5 = findViewById(R.id.icono5);
+        icono6 = findViewById(R.id.icono6);
+        icono7 = findViewById(R.id.icono7);
 
 
         btn_pedir_estandar.setOnClickListener(this);
@@ -247,16 +258,16 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_pedir_estandar:
-                calculando_ruta(view);
-                break;
+                calculando_ruta(view , tipo_carrera) ;
+                break ;
             case R.id.btn_pedir_super:
-                calculando_ruta(view);
+                calculando_ruta(view , tipo_carrera);
                 break;
             case R.id.btn_pedir_maravilla:
-                calculando_ruta(view);
+                calculando_ruta(view , tipo_carrera);
                 break;
             case R.id.btn_pedir_togo:
-                calculando_ruta(view);
+                calculando_ruta(view, tipo_carrera);
                 break;
         }
     }
@@ -530,7 +541,7 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
     }
 
 
-    public void calculando_ruta(View view){
+    private void calculando_ruta(View view , int valor){
         selected=null;
         if(mAutocompleteTextView.getTag()!= null && mAutocompleteTextView2.getTag()!=null){
             LatLng latlng1=(LatLng) mAutocompleteTextView.getTag();
@@ -544,8 +555,8 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
             //ocultado
             ll_ubic.setVisibility(View.INVISIBLE);
             iv_marker.setVisibility(View.INVISIBLE);
-
             view.setVisibility(View.GONE);
+
             googleMap.addMarker(new MarkerOptions().position(latlng1).title("INICIO").icon(BitmapDescriptorFactory.fromResource(R.drawable.asetmar)));
             googleMap.addMarker(new MarkerOptions().position(latlng2).title("FIN").icon(BitmapDescriptorFactory.fromResource(R.drawable.asetmar)));
             LatLngBounds.Builder builder = new LatLngBounds.Builder();
@@ -554,9 +565,32 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
             LatLngBounds bounds=builder.build();
             CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds,100);
             googleMap.moveCamera(cu);
-            linear_confirm.setVisibility(View.VISIBLE);
-            //aspdjapsd
+            //linear_confirm.setVisibility(View.VISIBLE);
+            mostraConfirmar(valor);
         }
+    }
+
+    //aqui me quede
+    private void mostraConfirmar(int valor){
+        switch (valor){
+            case 1:
+                linear_confirm.setVisibility(View.VISIBLE);
+                icono1.setVisibility(View.VISIBLE);
+                break;
+            case 2:
+                linear_confirm.setVisibility(View.VISIBLE);
+                icono2.setVisibility(View.VISIBLE);
+                break;
+            case 3:
+                linear_confirm.setVisibility(View.VISIBLE);
+                icono3.setVisibility(View.VISIBLE);
+                break;
+            case 4:
+                linear_confirm.setVisibility(View.VISIBLE);
+                icono4.setVisibility(View.VISIBLE);
+                break;
+        }
+        linear_confirm.setVisibility(View.VISIBLE);
     }
 
 }
