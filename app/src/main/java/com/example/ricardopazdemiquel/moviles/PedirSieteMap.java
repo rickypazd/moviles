@@ -258,16 +258,16 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_pedir_estandar:
-                calculando_ruta(view , 1) ;
+                calculando_ruta(view , tipo_carrera) ;
                 break ;
             case R.id.btn_pedir_super:
-                calculando_ruta(view , 2);
+                calculando_ruta(view , tipo_carrera);
                 break;
             case R.id.btn_pedir_maravilla:
-                calculando_ruta(view ,3);
+                calculando_ruta(view , tipo_carrera);
                 break;
             case R.id.btn_pedir_togo:
-                calculando_ruta(view,4);
+                calculando_ruta(view, tipo_carrera);
                 break;
         }
     }
@@ -565,11 +565,10 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
             LatLngBounds bounds=builder.build();
             CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds,100);
             googleMap.moveCamera(cu);
-            linear_confirm.setVisibility(View.VISIBLE);
-            //mostraConfirmar(valor);
+            //linear_confirm.setVisibility(View.VISIBLE);
+            mostraConfirmar(valor);
         }
     }
-
 
     //aqui me quede
     private void mostraConfirmar(int valor){
@@ -577,12 +576,21 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
             case 1:
                 linear_confirm.setVisibility(View.VISIBLE);
                 icono1.setVisibility(View.VISIBLE);
+                break;
+            case 2:
+                linear_confirm.setVisibility(View.VISIBLE);
+                icono2.setVisibility(View.VISIBLE);
+                break;
+            case 3:
+                linear_confirm.setVisibility(View.VISIBLE);
+                icono3.setVisibility(View.VISIBLE);
+                break;
+            case 4:
+                linear_confirm.setVisibility(View.VISIBLE);
+                icono4.setVisibility(View.VISIBLE);
+                break;
         }
         linear_confirm.setVisibility(View.VISIBLE);
-
-
     }
-
-
 
 }

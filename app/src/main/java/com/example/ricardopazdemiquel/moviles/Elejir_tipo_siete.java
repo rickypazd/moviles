@@ -50,11 +50,9 @@ public class Elejir_tipo_siete extends AppCompatActivity implements View.OnClick
         Intent intent = new Intent(Elejir_tipo_siete.this, PedirSieteMap.class);
         switch (view.getId()) {
             case R.id.btn_siete:
-
                     intent.putExtra("lng", longitudeGPS);
                     intent.putExtra("lat", latitudeGPS);
                     intent.putExtra("tipo", 1);
-
 
                 break;
             case R.id.btn_superSiete:
