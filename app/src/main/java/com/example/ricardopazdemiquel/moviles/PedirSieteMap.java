@@ -578,19 +578,19 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
         switch (valor){
             case 1:
                 layoutButon.setVisibility(View.VISIBLE);
-                //icono1.setVisibility(View.VISIBLE);
+                icono1.setVisibility(View.VISIBLE);
                 break;
             case 2:
                 layoutButon.setVisibility(View.VISIBLE);
-                //icono2.setVisibility(View.VISIBLE);
+                icono2.setVisibility(View.VISIBLE);
                 break;
             case 3:
                 layoutButon.setVisibility(View.VISIBLE);
-                //icono3.setVisibility(View.VISIBLE);
+                icono3.setVisibility(View.VISIBLE);
                 break;
             case 4:
                 layoutButon.setVisibility(View.VISIBLE);
-                //icono4.setVisibility(View.VISIBLE);
+                icono4.setVisibility(View.VISIBLE);
                 break;
         }
     }
