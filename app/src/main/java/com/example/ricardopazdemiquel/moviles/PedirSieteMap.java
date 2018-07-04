@@ -104,7 +104,7 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
 
     JSONObject usr_log;
     //inicializamos los botones para pedir siete y el tipo de carrera
-    private Button btn_pedir_super , btn_pedir_maravilla ,btn_pedir_togo  , btn_pedir_estandar;
+    private Button btn_pedir_super , btn_pedir_maravilla ,btn_pedir_togo , btn_pedir_estandar;
     private int tipo_carrera;
     // inicializamos los iconos de confirmar carrera
     private TextView icono1, icono2 ,icono3 , icono4 ,icono5, icono6,icono7;
@@ -136,6 +136,9 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
         btn_pedir_maravilla = findViewById(R.id.btn_pedir_maravilla);
         btn_pedir_togo = findViewById(R.id.btn_pedir_togo);
         btn_pedir_estandar = findViewById(R.id.btn_pedir_estandar);
+
+        //View one = findViewById(R.id.viewOne);
+        //View two = findViewById(R.id.viewtwo);
 
         icono1 = findViewById(R.id.icono1);
         icono2 = findViewById(R.id.icono2);
@@ -575,19 +578,19 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
         switch (valor){
             case 1:
                 layoutButon.setVisibility(View.VISIBLE);
-                icono1.setVisibility(View.VISIBLE);
+                //icono1.setVisibility(View.VISIBLE);
                 break;
             case 2:
                 layoutButon.setVisibility(View.VISIBLE);
-                icono2.setVisibility(View.VISIBLE);
+                //icono2.setVisibility(View.VISIBLE);
                 break;
             case 3:
                 layoutButon.setVisibility(View.VISIBLE);
-                icono3.setVisibility(View.VISIBLE);
+                //icono3.setVisibility(View.VISIBLE);
                 break;
             case 4:
                 layoutButon.setVisibility(View.VISIBLE);
-                icono4.setVisibility(View.VISIBLE);
+                //icono4.setVisibility(View.VISIBLE);
                 break;
         }
     }
