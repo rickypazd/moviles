@@ -94,7 +94,7 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
     private ImageView iv_marker;
     private LinearLayout ll_ubic;
     private LinearLayout linear_confirm;
-    private ConstraintLayout ll_boton;
+    private ConstraintLayout layoutButon;
     private LatLng inicio;
     private LatLng fin;
     private GoogleApiClient mGoogleApiClient;
@@ -103,8 +103,11 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
             new LatLng(37.398160, -122.180831), new LatLng(37.430610, -121.9720));
 
     JSONObject usr_log;
+    //inicializamos los botones para pedir siete y el tipo de carrera
     private Button btn_pedir_super , btn_pedir_maravilla ,btn_pedir_togo  , btn_pedir_estandar;
     private int tipo_carrera;
+    // inicializamos los iconos de confirmar carrera
+    private TextView icono1, icono2 ,icono3 , icono4 ,icono5, icono6,icono7;
 
     public PedirSieteMap() {
     }
@@ -114,7 +117,7 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pedir_siete_map);
         ll_ubic=findViewById(R.id.linearLayoutPedir);
-        ll_boton=findViewById(R.id.ll_boton);
+        layoutButon=findViewById(R.id.ll_boton);
         iv_marker=findViewById(R.id.ivmarker);
         monto=findViewById(R.id.tv_monto);
 
@@ -134,6 +137,13 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
         btn_pedir_togo = findViewById(R.id.btn_pedir_togo);
         btn_pedir_estandar = findViewById(R.id.btn_pedir_estandar);
 
+        icono1 = findViewById(R.id.icono1);
+        icono2 = findViewById(R.id.icono2);
+        icono3 = findViewById(R.id.icono3);
+        icono4 = findViewById(R.id.icono4);
+        icono5 = findViewById(R.id.icono5);
+        icono6 = findViewById(R.id.icono6);
+        icono7 = findViewById(R.id.icono7);
 
         btn_pedir_estandar.setOnClickListener(this);
         btn_pedir_super.setOnClickListener(this);
@@ -247,16 +257,16 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_pedir_estandar:
-                calculando_ruta(view);
+                calculando_ruta(view , tipo_carrera);
                 break;
             case R.id.btn_pedir_super:
-                calculando_ruta(view);
+                calculando_ruta(view , tipo_carrera);
                 break;
             case R.id.btn_pedir_maravilla:
-                calculando_ruta(view);
+                calculando_ruta(view , tipo_carrera);
                 break;
             case R.id.btn_pedir_togo:
-                calculando_ruta(view);
+                calculando_ruta(view , tipo_carrera);
                 break;
         }
     }
@@ -530,7 +540,7 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
     }
 
 
-    public void calculando_ruta(View view){
+    public void calculando_ruta(View view , int tipo){
         selected=null;
         if(mAutocompleteTextView.getTag()!= null && mAutocompleteTextView2.getTag()!=null){
             LatLng latlng1=(LatLng) mAutocompleteTextView.getTag();
@@ -556,6 +566,29 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
             googleMap.moveCamera(cu);
             linear_confirm.setVisibility(View.VISIBLE);
             //aspdjapsd
+            mostraConfirmar(tipo);
+        }
+    }
+
+    //aqui me quede
+    private void mostraConfirmar(int valor){
+        switch (valor){
+            case 1:
+                layoutButon.setVisibility(View.VISIBLE);
+                icono1.setVisibility(View.VISIBLE);
+                break;
+            case 2:
+                layoutButon.setVisibility(View.VISIBLE);
+                icono2.setVisibility(View.VISIBLE);
+                break;
+            case 3:
+                layoutButon.setVisibility(View.VISIBLE);
+                icono3.setVisibility(View.VISIBLE);
+                break;
+            case 4:
+                layoutButon.setVisibility(View.VISIBLE);
+                icono4.setVisibility(View.VISIBLE);
+                break;
         }
     }
 
