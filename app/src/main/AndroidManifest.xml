@@ -109,7 +109,10 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".Metodo_de_pagoCliente" />
         <activity android:name=".CancelarConductor" />
+
+        <activity android:name=".ConfirmarCancelacion"></activity>
         <activity android:name=".CanceloViaje_Cliente"></activity>
+
     </application>
 
 </manifest>
