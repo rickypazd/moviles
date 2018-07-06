@@ -116,7 +116,6 @@ public class MapCarrera extends AppCompatActivity implements LocationListener{
                 @Override
                 public void onClick(View v) {
                     if(carrera!=null){
-
                         try {
                             Intent inte = new Intent(MapCarrera.this,CancelarConductor.class);
                             inte.putExtra("id_carrera",carrera.getString("id"));
@@ -124,9 +123,7 @@ public class MapCarrera extends AppCompatActivity implements LocationListener{
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-
                     }
-
                 }
             });
         } catch (InterruptedException e) {
