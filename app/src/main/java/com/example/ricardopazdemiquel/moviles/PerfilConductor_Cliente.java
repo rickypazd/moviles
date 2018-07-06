@@ -5,6 +5,8 @@ import android.os.Bundle;
 
 public class PerfilConductor_Cliente extends AppCompatActivity {
 
+    private int s=2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
