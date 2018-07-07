@@ -207,7 +207,7 @@ public class EsperandoConductor extends AppCompatActivity {
         Toast.makeText(EsperandoConductor.this,"El conductor Llego",Toast.LENGTH_SHORT).show();
 
         ll_conductor_llego.setVisibility(View.VISIBLE);
-        //perfil_condutor.setVisibility(View.VISIBLE);
+        perfil_condutor.setVisibility(View.VISIBLE);
     }
 
     private void Inicio_Carrera(Intent intent){
@@ -215,7 +215,7 @@ public class EsperandoConductor extends AppCompatActivity {
                 Toast.LENGTH_SHORT).show();
         ll_conductor_llego.setVisibility(View.GONE);
         new buscar_carrera().execute();
-        //perfil_condutor.setVisibility(View.VISIBLE);
+        perfil_condutor.setVisibility(View.VISIBLE);
     }
 
     private void finalizo_carrera(Intent intenta){
@@ -450,7 +450,9 @@ public class EsperandoConductor extends AppCompatActivity {
         }
 
     }
+
     private class buscar_carrera extends AsyncTask<Void, String, String> {
+
         private ProgressDialog progreso;
         @Override
         protected void onPreExecute() {
@@ -479,9 +481,7 @@ public class EsperandoConductor extends AppCompatActivity {
         @Override
         protected void onPostExecute(String resp) {
             super.onPostExecute(resp);
-
             progreso.dismiss();
-
             if (resp == null) {
                 Toast.makeText(EsperandoConductor.this,"Eroor al optener Datos",
                         Toast.LENGTH_SHORT).show();

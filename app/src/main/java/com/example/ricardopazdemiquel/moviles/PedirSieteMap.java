@@ -17,6 +17,8 @@ import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -55,6 +57,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -99,6 +102,7 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
     private LatLng fin;
     private GoogleApiClient mGoogleApiClient;
     private PlaceArrayAdapter mPlaceArrayAdapter;
+    private RecyclerView recyclerView;
     private static final LatLngBounds BOUNDS_MOUNTAIN_VIEW = new LatLngBounds(
             new LatLng(37.398160, -122.180831), new LatLng(37.430610, -121.9720));
 
@@ -136,6 +140,35 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
         btn_pedir_maravilla = findViewById(R.id.btn_pedir_maravilla);
         btn_pedir_togo = findViewById(R.id.btn_pedir_togo);
         btn_pedir_estandar = findViewById(R.id.btn_pedir_estandar);
+        recyclerView = findViewById(R.id.reciclerView);
+        recyclerView.setHasFixedSize(true);
+        LinearLayoutManager mylinear = new LinearLayoutManager(this);
+        mylinear.setOrientation(LinearLayoutManager.HORIZONTAL);
+        try {
+            JSONArray arr = new JSONArray();
+            JSONObject obj1= new JSONObject();
+            obj1.put("id",1);
+            obj1.put("nombre","Estandar");
+            arr.put(obj1);
+            JSONObject obj2= new JSONObject();
+            obj2.put("id",5);
+            obj2.put("nombre","4X4");
+            arr.put(obj2);
+            JSONObject obj3= new JSONObject();
+            obj3.put("id",6);
+            obj3.put("nombre","Camioneta");
+            arr.put(obj3);
+            JSONObject obj4= new JSONObject();
+            obj4.put("id",7);
+            obj4.put("nombre","6 pasajeros");
+            arr.put(obj4);
+            AdaptadorSieteEstandar ada = new AdaptadorSieteEstandar(arr,this,PedirSieteMap.this);
+           recyclerView.setAdapter(ada);
+            recyclerView.setLayoutManager(mylinear);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
 
         //View one = findViewById(R.id.viewOne);
         //View two = findViewById(R.id.viewtwo);
@@ -526,9 +559,9 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
     }
 
     private void mostar_button(int tipo) {
-        switch (tipo) {
+            switch (tipo) {
             case 1:
-                btn_pedir_estandar.setVisibility(View.VISIBLE);
+                recyclerView.setVisibility(View.VISIBLE);
                 break;
             case 2:
                 btn_pedir_super.setVisibility(View.VISIBLE);
@@ -554,9 +587,11 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
             DownloadTask downloadTask= new DownloadTask();
             downloadTask.execute(url);
 
+            tipo_carrera = tipo;
             //ocultado
-            ll_ubic.setVisibility(View.INVISIBLE);
-            iv_marker.setVisibility(View.INVISIBLE);
+            ll_ubic.setVisibility(View.GONE);
+            iv_marker.setVisibility(View.GONE);
+            recyclerView.setVisibility(view.GONE);
 
             view.setVisibility(View.GONE);
             googleMap.addMarker(new MarkerOptions().position(latlng1).title("INICIO").icon(BitmapDescriptorFactory.fromResource(R.drawable.asetmar)));
@@ -592,6 +627,20 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
                 layoutButon.setVisibility(View.VISIBLE);
                 icono4.setVisibility(View.VISIBLE);
                 break;
+            case 5:
+                layoutButon.setVisibility(View.VISIBLE);
+                icono5.setVisibility(View.VISIBLE);
+                break;
+            case 6:
+                layoutButon.setVisibility(View.VISIBLE);
+                icono6.setVisibility(View.VISIBLE);
+                break;
+            case 7:
+                layoutButon.setVisibility(View.VISIBLE);
+                icono7.setVisibility(View.VISIBLE);
+                break;
+
+
         }
     }
 

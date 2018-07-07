@@ -114,7 +114,8 @@
             android:name=".CanceloViaje_Cliente"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".Perfil_Conductor" />
-        <activity android:name=".Favoritos_Clientes"></activity>
+        <activity android:name=".Favoritos_Clientes" />
+        <activity android:name=".Detalle_viaje_Cliente"></activity>
     </application>
 
 </manifest>
