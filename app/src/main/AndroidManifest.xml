@@ -59,9 +59,6 @@
             android:name=".PedirSieteMap"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".Cofirmar_Carrera"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
             android:name=".Carga"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
@@ -71,34 +68,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Login"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name=".LoginConductor"
-            android:label="@string/title_activity_login_conductor"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name=".MainActivityConductor"
-            android:label="Conductor"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".InicieTurno"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
             android:name=".LoginCliente"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".PidiendoSiete"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name=".MapCarrera"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".EsperandoConductor" />
+
+        <activity android:name=".IniciarCuentaActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+
         <activity
             android:name=".finalizar_viajeCliente"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name=".cobranza"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".Elejir_tipo_siete"
@@ -108,14 +88,19 @@
             android:name=".Sin_conexion"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".Metodo_de_pagoCliente" />
-        <activity android:name=".CancelarConductor" />
-        <activity android:name=".ConfirmarCancelacion" />
         <activity
             android:name=".CanceloViaje_Cliente"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".Perfil_Conductor" />
         <activity android:name=".Favoritos_Clientes" />
-        <activity android:name=".Detalle_viaje_Cliente"></activity>
+
+        <activity android:name=".Detalle_viaje_Cliente" />
+
+        <activity android:name=".Iniciar_Sesion_Activity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+
+        <activity android:name=".Crear_CuentaActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+
     </application>
 
 </manifest>

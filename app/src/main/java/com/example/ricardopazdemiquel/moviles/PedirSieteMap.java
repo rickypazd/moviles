@@ -81,6 +81,7 @@ import utiles.DirectionsJSONParser;
 import utiles.Token;
 
 public class PedirSieteMap extends AppCompatActivity implements View.OnClickListener, View.OnFocusChangeListener, GoogleApiClient.OnConnectionFailedListener,GoogleApiClient.ConnectionCallbacks {
+
     MapView mMapView;
     private GoogleMap googleMap;
     private boolean entroLocation=false;
@@ -211,7 +212,7 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
         usr_log = getUsr_log();
 
         if (usr_log == null) {
-            Intent intent = new Intent(PedirSieteMap.this, Login.class);
+            Intent intent = new Intent(PedirSieteMap.this, LoginCliente.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
             finish();
@@ -391,6 +392,7 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
 
         return url;
     }
+
     public JSONObject getUsr_log() {
         SharedPreferences preferencias = getSharedPreferences("myPref", MODE_PRIVATE);
         String usr = preferencias.getString("usr_log", "");
