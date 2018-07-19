@@ -98,6 +98,7 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
     private LinearLayout ll_ubic;
     private LinearLayout linear_confirm;
     private ConstraintLayout layoutButon;
+    private ConstraintLayout btn_estandar_recicler;
     private LatLng inicio;
     private LatLng fin;
     private GoogleApiClient mGoogleApiClient;
@@ -110,6 +111,7 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
     //inicializamos los botones para pedir siete y el tipo de carrera
     private Button btn_pedir_super , btn_pedir_maravilla ,btn_pedir_togo , btn_pedir_estandar;
     private int tipo_carrera;
+
     // inicializamos los iconos de confirmar carrera
     private TextView icono1, icono2 ,icono3 , icono4 ,icono5, icono6,icono7;
 
@@ -122,6 +124,7 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_pedir_siete_map);
         ll_ubic=findViewById(R.id.linearLayoutPedir);
         layoutButon=findViewById(R.id.ll_boton);
+        //btn_estandar_recicler=findViewById(R.id.btn_estandar_recicler);
         iv_marker=findViewById(R.id.ivmarker);
         monto=findViewById(R.id.tv_monto);
 
@@ -187,7 +190,9 @@ public class PedirSieteMap extends AppCompatActivity implements View.OnClickList
         btn_pedir_togo.setOnClickListener(this);
 
         linear_confirm=findViewById(R.id.linear_confirm);
+
         mostar_button(tipo_carrera);
+
         mAutocompleteTextView = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView);
         mAutocompleteTextView.setOnFocusChangeListener(this);
         mAutocompleteTextView.setThreshold(3);
