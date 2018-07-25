@@ -255,8 +255,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                      Toast.makeText(this,"sdfsdf",   Toast.LENGTH_LONG).show();
                      break;
                  case R.id.btn_nav_formaspago:
-                        selectWaze();
-                     break;
+                    break;
                  case R.id.btn_nav_miperfil:
                      break;
                  case R.id.btn_nav_misviajes:
@@ -268,21 +267,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
              DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
              drawer.closeDrawer(GravityCompat.START);
          }
-        public void selectWaze(){
-            try
-            {
-                // Launch Waze to look for Hawaii:
-                String url = "https://waze.com/ul?ll=45.6906304,-120.810983&navigate=yes";
-                Intent intent = new Intent( Intent.ACTION_VIEW, Uri.parse( url ) );
-                startActivity( intent );
-            }
-            catch ( ActivityNotFoundException ex  )
-            {
-                // If Waze is not installed, open it in Google Play:
-                Intent intent = new Intent( Intent.ACTION_VIEW, Uri.parse( "market://details?id=com.waze" ) );
-                startActivity(intent);
-            }
-        }
+
          private class CargarListaTask extends AsyncTask<Void, String, String> {
 
         private ProgressDialog progreso;
