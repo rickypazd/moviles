@@ -53,8 +53,8 @@ import utiles.GPS_service;
 import utiles.MapService;
 import utiles.Token;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener
-     {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
     private BroadcastReceiver broadcastReceiver;
     private  BroadcastReceiver broadcastReceiverMessage;
         private Button btn_nav_pidesiete;
@@ -121,24 +121,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onResume() {
         super.onResume();
 
-        if(broadcastReceiverMessage == null){
-            broadcastReceiverMessage = new BroadcastReceiver() {
-                @Override
-                public void onReceive(Context context, Intent intent) {
-                            notificacionReciber(intent);
 
-                }
-            };
-        }
-        registerReceiver(broadcastReceiverMessage,new IntentFilter("Message"));
-    }
-
-
-    //notificacacaiones
-    private void notificacionReciber(Intent intent){
-            Toast.makeText(this,"sdfsdf",   Toast.LENGTH_LONG).show();
-            Intent inte = new Intent(MainActivity.this,Cofirmar_Carrera.class);
-            startActivity(inte);
     }
 
 
@@ -175,12 +158,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-         // Json : obtiene el id del usuario si es que ya estuvo registrado en la aplicaacion o aiga iniciado sesion
+         // Json : obtiene el id del usuario si es que ya estuvo registrado en la aplicacion o aiga iniciado sesion
          public JSONObject getUsr_log() {
              SharedPreferences preferencias = getSharedPreferences("myPref",MODE_PRIVATE);
              String usr = preferencias.getString("usr_log", "");
              if (usr.length()<=0) {
-                 Intent intent = new Intent(MainActivity.this,Login.class);
+                 Intent intent = new Intent(MainActivity.this,LoginCliente.class);
                  intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                  startActivity(intent);
                  return null;
@@ -247,6 +230,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+
          @Override
          public void onClick(View v) {
              int id=v.getId();
@@ -267,6 +251,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
              DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
              drawer.closeDrawer(GravityCompat.START);
          }
+<<<<<<< HEAD
 
          private class CargarListaTask extends AsyncTask<Void, String, String> {
 
@@ -279,37 +264,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             this.lat=lat;
             this.lon=lon;
             this.id=id;
+=======
+        public void selectWaze(){
+            try
+            {
+                // Launch Waze to look for Hawaii:
+                String url = "https://waze.com/ul?ll=45.6906304,-120.810983&navigate=yes";
+                Intent intent = new Intent( Intent.ACTION_VIEW, Uri.parse( url ) );
+                startActivity( intent );
+            }
+            catch ( ActivityNotFoundException ex  )
+            {
+                // If Waze is not installed, open it in Google Play:
+                Intent intent = new Intent( Intent.ACTION_VIEW, Uri.parse( "market://details?id=com.waze" ) );
+                startActivity(intent);
+            }
+>>>>>>> a9fa946eab2ac2cdff75cd2c8b6001011e9d28e5
         }
 
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
-
-        @Override
-        protected String doInBackground(Void... params) {
-            publishProgress("por favor espere...");
-            Hashtable<String, String> parametros = new Hashtable<>();
-            parametros.put("evento", "set_pos_vehiculo");
-            parametros.put("lat",lat+"");
-            parametros.put("lon",lon+"");
-            parametros.put("id_vehiculo",id+"");
-            String respuesta = HttpConnection.sendRequest(new StandarRequestConfiguration(getString(R.string.url_servlet_admin), MethodType.POST, parametros));
-            return respuesta;
-        }
-
-        @Override
-        protected void onPostExecute(String resp) {
-            super.onPostExecute(resp);
-
-        }
-
-        @Override
-        protected void onProgressUpdate(String... values) {
-            super.onProgressUpdate(values);
-
-        }
-    }
 
     public class Get_validarCarrera extends AsyncTask<Void, String, String>{
          private int id;

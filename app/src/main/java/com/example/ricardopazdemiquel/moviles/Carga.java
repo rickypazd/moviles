@@ -29,11 +29,7 @@ public class Carga extends AppCompatActivity {
             public void run() {
                 if (usr_log != null) {
                     try {
-                        if(usr_log.getInt("id_rol")==2){
-                            Intent intent = new Intent(Carga.this, MainActivityConductor.class);
-                            startActivity(intent);
-                            finish();
-                        }else if(usr_log.getInt("id_rol")==4){
+                        if(usr_log.getInt("id_rol")==4){
                             Intent intent = new Intent(Carga.this, MainActivity.class);
                             startActivity(intent);
                             finish();
@@ -43,7 +39,7 @@ public class Carga extends AppCompatActivity {
                     }
 
                 } else {
-                    Intent intent = new Intent(Carga.this, Login.class);
+                    Intent intent = new Intent(Carga.this, Iniciar_Sesion_Activity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
                     finish();

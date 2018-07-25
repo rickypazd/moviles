@@ -56,7 +56,6 @@ public class fr_map extends Fragment implements View.OnClickListener{
 
     public fr_map() {
         // Required empty public constructor
-
     }
 
     @Override
